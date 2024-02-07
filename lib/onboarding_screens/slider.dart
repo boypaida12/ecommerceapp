@@ -44,11 +44,17 @@ class _IntroductorySliderPageState extends State<IntroductorySliderPage> {
             child: Padding(
           padding: const EdgeInsets.only(top: 16, right: 16),
           child: TextButton(
-            child: const Text('Skip',
-                style: TextStyle(
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black)),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text('1/3'),
+                const Text('Skip',
+                    style: TextStyle(
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black)),
+              ],
+            ),
             onPressed: () => _onIntroEnd(context),
           ),
         )),
@@ -59,41 +65,22 @@ class _IntroductorySliderPageState extends State<IntroductorySliderPage> {
           title: "Fractional shares",
           body:
               "Instead of having to buy an entire share, invest any amount you want.",
-          image: Image.asset('assets/images/slider1.png'),
+          image: Center(child: Image.asset('assets/images/slider1.png')),
           decoration: pageDecoration,
         ),
         PageViewModel(
           title: "Learn as you go",
           body:
               "Download the Stockpile app and master the market with our mini-lesson.",
-          image: Image.asset('assets/images/slider2.png'),
+          image: Center(child: Image.asset('assets/images/slider2.png')),
           decoration: pageDecoration,
         ),
         PageViewModel(
           title: "Kids and teens",
           body:
               "Kids and teens can track their stocks 24/7 and place trades that you approve.",
-          image: Image.asset('assets/images/slider3.png'),
+          image: Center(child: Image.asset('assets/images/slider3.png')),
           decoration: pageDecoration,
-        ),
-        PageViewModel(
-          title: "Title of last page - reversed",
-          bodyWidget: const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("Click on ", style: bodyStyle),
-              Icon(Icons.edit),
-              Text(" to edit a post", style: bodyStyle),
-            ],
-          ),
-          decoration: pageDecoration.copyWith(
-            bodyFlex: 2,
-            imageFlex: 4,
-            bodyAlignment: Alignment.bottomCenter,
-            imageAlignment: Alignment.center,
-          ),
-          image: Image.asset('assets/images/slider3.png'),
-          reverse: true,
         ),
       ],
       onDone: () => _onIntroEnd(context),
