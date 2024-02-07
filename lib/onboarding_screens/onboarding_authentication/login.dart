@@ -12,14 +12,24 @@ class _LogInScreenState extends State<LogInScreen> {
   Widget build(BuildContext context) {
     return Container(
         color: Colors.white,
-        child: ListView(children: [
-          Text(
-            'Welcome\nBack!',
-            style: TextStyle(
-                fontSize: 36,
-                fontWeight: FontWeight.bold,
-                decoration: TextDecoration.none),
-          )
-        ]));
+        child: Padding(
+          padding: const EdgeInsets.only(left: 28.0),
+          child: ListView(children: const [
+            SizedBox(
+              height: 50,
+            ),
+            Text(
+              'Welcome\nBack!',
+              style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  color: Colors.black,
+                  fontSize: 36,
+                  fontWeight: FontWeight.bold,
+                  decoration: TextDecoration.none),
+            ),
+            
+
+          ],),
+        ));
   }
 }
