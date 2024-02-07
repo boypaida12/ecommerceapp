@@ -1,5 +1,6 @@
+import 'package:ecommerceapp/onboarding_screens/onboarding_authentication/login.dart';
 import 'package:ecommerceapp/onboarding_screens/slider.dart';
-import 'package:ecommerceapp/onboarding_screens/splash_screen.dart';
+
 import 'package:flutter/material.dart';
 
 class StyleApp extends StatelessWidget {
@@ -7,9 +8,9 @@ class StyleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
      
-      home: const IntroductorySliderPage(),
+      home:  LogInScreen(),
     );
   }
 }

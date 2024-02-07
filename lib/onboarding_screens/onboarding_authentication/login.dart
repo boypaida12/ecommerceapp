@@ -10,6 +10,16 @@ class LogInScreen extends StatefulWidget {
 class _LogInScreenState extends State<LogInScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+        color: Colors.white,
+        child: ListView(children: [
+          Text(
+            'Welcome\nBack!',
+            style: TextStyle(
+                fontSize: 36,
+                fontWeight: FontWeight.bold,
+                decoration: TextDecoration.none),
+          )
+        ]));
   }
 }
