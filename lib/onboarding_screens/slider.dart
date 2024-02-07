@@ -44,11 +44,11 @@ class _IntroductorySliderPageState extends State<IntroductorySliderPage> {
             child: Padding(
           padding: const EdgeInsets.only(top: 16, right: 16),
           child: TextButton(
-            child: Row(
+            child: const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text('1/3'),
-                const Text('Skip',
+                Text('1/3'),
+                Text('Skip',
                     style: TextStyle(
                         fontSize: 16.0,
                         fontWeight: FontWeight.bold,
