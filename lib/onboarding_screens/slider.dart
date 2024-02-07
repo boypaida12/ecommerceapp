@@ -123,12 +123,14 @@ class _IntroductorySliderPageState extends State<IntroductorySliderPage> {
           ? const EdgeInsets.all(12.0)
           : const EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 4.0),
       dotsDecorator: const DotsDecorator(
+        activeColor: Color.fromRGBO(23, 34, 59, 1.0),
         size: Size(10.0, 10.0),
         color: Color(0xFFBDBDBD),
         activeSize: Size(22.0, 10.0),
         activeShape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(25.0),
-           ),
+          borderRadius: BorderRadius.all(
+            Radius.circular(25.0),
+          ),
         ),
       ),
     );
