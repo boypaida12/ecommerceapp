@@ -45,7 +45,10 @@ class _IntroductorySliderPageState extends State<IntroductorySliderPage> {
           padding: const EdgeInsets.only(top: 16, right: 16),
           child: TextButton(
             child: const Text('Skip',
-                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold)),
+                style: TextStyle(
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black)),
             onPressed: () => _onIntroEnd(context),
           ),
         )),
@@ -100,10 +103,14 @@ class _IntroductorySliderPageState extends State<IntroductorySliderPage> {
       nextFlex: 0,
       showBackButton: false,
 
-      back: const Icon(Icons.arrow_back),
+      back: const Text('Prev', style: TextStyle(fontWeight: FontWeight.w600, color: Color(0xC4C4C4))),
       skip: const Text('Prev', style: TextStyle(fontWeight: FontWeight.w600)),
-      next: const Icon(Icons.arrow_forward),
-      done: const Text('Next', style: TextStyle(fontWeight: FontWeight.w600)),
+      next: const Text('Next',
+          style:
+              TextStyle(fontWeight: FontWeight.w600, color: Color(0xFFF83758))),
+      done: const Text('Get Started',
+          style:
+              TextStyle(fontWeight: FontWeight.w600, color: Color(0xFFF83758))),
       curve: Curves.fastLinearToSlowEaseIn,
       controlsMargin: const EdgeInsets.all(16),
       controlsPadding: kIsWeb
@@ -117,12 +124,6 @@ class _IntroductorySliderPageState extends State<IntroductorySliderPage> {
           borderRadius: BorderRadius.all(Radius.circular(25.0)),
         ),
       ),
-      // dotsContainerDecorator: const ShapeDecoration(
-      //   color: Colors.white,
-      //   shape: RoundedRectangleBorder(
-      //     borderRadius: BorderRadius.all(Radius.circular(8.0)),
-      //   ),
-      // ),
     );
   }
 }
