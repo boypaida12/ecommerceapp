@@ -103,8 +103,14 @@ class _IntroductorySliderPageState extends State<IntroductorySliderPage> {
       nextFlex: 0,
       showBackButton: false,
 
-      back: const Text('Prev', style: TextStyle(fontWeight: FontWeight.w600, color: Color(0xC4C4C4))),
-      skip: const Text('Prev', style: TextStyle(fontWeight: FontWeight.w600)),
+      back: const Text('Prev',
+          style: TextStyle(
+              fontWeight: FontWeight.w600,
+              color: Color.fromRGBO(196, 196, 196, 1.0))),
+      skip: const Text('Prev',
+          style: TextStyle(
+              fontWeight: FontWeight.w600,
+              color: Color.fromRGBO(196, 196, 196, 1.0))),
       next: const Text('Next',
           style:
               TextStyle(fontWeight: FontWeight.w600, color: Color(0xFFF83758))),
@@ -121,7 +127,8 @@ class _IntroductorySliderPageState extends State<IntroductorySliderPage> {
         color: Color(0xFFBDBDBD),
         activeSize: Size(22.0, 10.0),
         activeShape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(25.0)),
+          borderRadius: BorderRadius.all(Radius.circular(25.0),
+           ),
         ),
       ),
     );
