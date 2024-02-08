@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LogInScreen extends StatefulWidget {
   const LogInScreen({super.key});
@@ -112,10 +113,10 @@ class _LogInScreenState extends State<LogInScreen> {
                       color: Color.fromRGBO(87, 87, 87, 1.0),
                       fontSize: 12),
                 ),
-                SizedBox(height: 20),
-                const Center(
+                const SizedBox(height: 20),
+                Center(
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       ClipOval(
                         child: Material(
@@ -125,16 +126,67 @@ class _LogInScreenState extends State<LogInScreen> {
                             ),
                           ),
 
-                          color: Color.fromRGBO(
-                              252, 243, 246, 1.0), // button color
-                          child: InkWell(
+                          color: Colors.grey.shade200, // button color
+                          child: const InkWell(
                             splashColor: Colors.red, // inkwell color
-                            child: const SizedBox(
+                            child: SizedBox(
                                 width: 56,
                                 height: 56,
-                                child: Icon(
-                                  Icons.facebook,
-                                  color: Colors.white,
+                                child: Center(
+                                  child: FaIcon(
+                                    FontAwesomeIcons.google,
+                                    color: Colors.white,
+                                  ),
+                                )),
+                            onTap: null,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      ClipOval(
+                        child: Material(
+                          shape: const CircleBorder(
+                            side: BorderSide(
+                              color: Color(0xFFF83758),
+                            ),
+                          ),
+
+                          color: Colors.grey.shade200, // button color
+                          child: const InkWell(
+                            splashColor: Colors.red, // inkwell color
+                            child: SizedBox(
+                                width: 56,
+                                height: 56,
+                                child: Center(
+                                  child: FaIcon(
+                                    FontAwesomeIcons.apple,
+                                    color: Colors.black,
+                                  ),
+                                )),
+                            onTap: null,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      ClipOval(
+                        child: Material(
+                          shape: const CircleBorder(
+                            side: BorderSide(
+                              color: Color(0xFFF83758),
+                            ),
+                          ),
+
+                          color: Colors.grey.shade200, // button color
+                          child: const InkWell(
+                            splashColor: Colors.red, // inkwell color
+                            child: SizedBox(
+                                width: 56,
+                                height: 56,
+                                child: Center(
+                                  child: FaIcon(
+                                    FontAwesomeIcons.facebookF,
+                                    color: Colors.indigo,
+                                  ),
                                 )),
                             onTap: null,
                           ),
@@ -142,7 +194,22 @@ class _LogInScreenState extends State<LogInScreen> {
                       ),
                     ],
                   ),
-                )
+                ),
+                const SizedBox(height: 10),
+                const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text('Create An Account',
+                          style: TextStyle(
+                              fontFamily: 'Montserrat', color: Colors.black)),
+                      Text('Sign Up',
+                          style: TextStyle(
+                              color: Color(0xFFF83758),
+                              fontFamily: 'Montserrat',
+                              fontWeight: FontWeight.bold,
+                              decoration: TextDecoration.underline,
+                              decorationColor: Color(0xFFF83758)))
+                    ]),
               ],
             ),
           )),

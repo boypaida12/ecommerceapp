@@ -19,6 +19,8 @@ dependencies:
   introduction_screen: ^3.1.12
   dots_indicator: ^2.1.2
   font_awesome_flutter: ^10.7.0
+  flutter_svg: ^2.0.9
+  
 
 dev_dependencies:
   flutter_test:
@@ -57,7 +59,7 @@ flutter:
   fonts:
     - family: Montserrat
       fonts:
-        - asset: fonts/montserrat.ttf
+        - asset: assets/fonts/montserrat.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
