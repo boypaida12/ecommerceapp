@@ -197,25 +197,26 @@ class _LogInScreenState extends State<LogInScreen> {
                   ),
                 ),
                 const SizedBox(height: 10),
-                 Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text('Create An Account',
-                          style: TextStyle(
-                              fontFamily: 'Montserrat', color: Colors.black)),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=> CreateAccountScreen()))
-                        },
-                        child: Text('Sign Up',
-                            style: TextStyle(
-                                color: Color(0xFFF83758),
-                                fontFamily: 'Montserrat',
-                                fontWeight: FontWeight.bold,
-                                decoration: TextDecoration.underline,
-                                decorationColor: Color(0xFFF83758))),
-                      )
-                    ]),
+                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  const Text('Create An Account',
+                      style: TextStyle(
+                          fontFamily: 'Montserrat', color: Colors.black)),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const CreateAccountScreen()));
+                    },
+                    child: const Text('Sign Up',
+                        style: TextStyle(
+                            color: Color(0xFFF83758),
+                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.bold,
+                            decoration: TextDecoration.underline,
+                            decorationColor: Color(0xFFF83758))),
+                  )
+                ]),
               ],
             ),
           )),
