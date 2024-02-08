@@ -1,4 +1,5 @@
 import 'package:ecommerceapp/onboarding_screens/onboarding_authentication/create_account.dart';
+import 'package:ecommerceapp/onboarding_screens/onboarding_authentication/forgot_password.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -75,13 +76,22 @@ class _LogInScreenState extends State<LogInScreen> {
                     keyboardType: TextInputType.text,
                   ),
                 ),
-                const Text(
-                  'Forgot Password?',
-                  textAlign: TextAlign.end,
-                  style: TextStyle(
-                    fontFamily: 'Montserrat',
-                    color: Color(0xFFF83758),
-                    fontSize: 12,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ForgetPasswordScreen())
+                              );
+                  },
+                  child: const Text(
+                    'Forgot Password?',
+                    textAlign: TextAlign.end,
+                    style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      color: Color(0xFFF83758),
+                      fontSize: 12,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 40),
@@ -206,7 +216,8 @@ class _LogInScreenState extends State<LogInScreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const CreateAccountScreen()));
+                              builder: (context) => const CreateAccountScreen())
+                              );
                     },
                     child: const Text('Sign Up',
                         style: TextStyle(
