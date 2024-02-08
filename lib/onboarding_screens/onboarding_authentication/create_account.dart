@@ -71,6 +71,56 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                     keyboardType: TextInputType.text,
                   ),
                 ),
+
+                 const SizedBox(
+                  height: 40,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(2.0),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      fillColor: Colors.grey[100],
+                      filled: true,
+                      hintText: 'Confirm Password',
+                      suffixIcon: const Icon(Icons.visibility_off,
+                          color: Color(0xFF626262)),
+                      hintStyle: const TextStyle(color: Color(0xFF626262)),
+                      prefixIcon:
+                          const Icon(Icons.lock, color: Color(0xFF626262)),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: const BorderSide(
+                            color: Color(0xFFA8A8A9), width: 1.0),
+                      ),
+                    ),
+                    keyboardType: TextInputType.text,
+                  ),
+                ),
+
+                const SizedBox(height: 20),
+
+                Text('By clicking the Register button, you agree\nto the public offer'),
+
+                 const SizedBox(height: 40),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: const Text(
+                    'Login',
+                    style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFFF83758),
+                    foregroundColor: Colors.white,
+                    minimumSize: const Size(double.infinity, 50),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(6),
+                    ),
+                  ),
+                ),
         ],
       ),
     );
