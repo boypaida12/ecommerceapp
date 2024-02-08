@@ -27,7 +27,7 @@ class _LogInScreenState extends State<LogInScreen> {
                       fontFamily: 'Montserrat',
                       color: Colors.black,
                       fontSize: 36,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w900,
                       decoration: TextDecoration.none),
                 ),
                 const SizedBox(height: 20),
