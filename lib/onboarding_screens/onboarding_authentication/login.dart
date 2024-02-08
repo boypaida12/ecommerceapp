@@ -29,7 +29,7 @@ class _LogInScreenState extends State<LogInScreen> {
                       fontWeight: FontWeight.bold,
                       decoration: TextDecoration.none),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Padding(
                   padding: const EdgeInsets.all(2.0),
                   child: TextField(
@@ -37,7 +37,7 @@ class _LogInScreenState extends State<LogInScreen> {
                       filled: true,
                       fillColor: Colors.grey[100],
                       hintText: 'Username or Email',
-                      hintStyle: TextStyle(color: Color(0xFF626262)),
+                      hintStyle: const TextStyle(color: Color(0xFF626262)),
                       prefixIcon:
                           const Icon(Icons.person, color: Color(0xFF626262)),
                       border: OutlineInputBorder(
@@ -49,7 +49,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     keyboardType: TextInputType.text,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
                 Padding(
@@ -61,7 +61,7 @@ class _LogInScreenState extends State<LogInScreen> {
                       hintText: 'Password',
                       suffixIcon: const Icon(Icons.visibility_off,
                           color: Color(0xFF626262)),
-                      hintStyle: TextStyle(color: Color(0xFF626262)),
+                      hintStyle: const TextStyle(color: Color(0xFF626262)),
                       prefixIcon:
                           const Icon(Icons.lock, color: Color(0xFF626262)),
                       border: OutlineInputBorder(
@@ -73,7 +73,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     keyboardType: TextInputType.text,
                   ),
                 ),
-                Text(
+                const Text(
                   'Forgot Password?',
                   textAlign: TextAlign.end,
                   style: TextStyle(
@@ -82,7 +82,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     fontSize: 12,
                   ),
                 ),
-                SizedBox(height: 40),
+                const SizedBox(height: 40),
                 ElevatedButton(
                   onPressed: () {},
                   child: const Text(
@@ -102,9 +102,9 @@ class _LogInScreenState extends State<LogInScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 30),
-                Text(
-                  'OR Continue with -',
+                const SizedBox(height: 30),
+                const Text(
+                  '- OR Continue with -',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       fontWeight: FontWeight.w600,
@@ -112,6 +112,37 @@ class _LogInScreenState extends State<LogInScreen> {
                       color: Color.fromRGBO(87, 87, 87, 1.0),
                       fontSize: 12),
                 ),
+                SizedBox(height: 20),
+                const Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      ClipOval(
+                        child: Material(
+                          shape: const CircleBorder(
+                            side: BorderSide(
+                              color: Color(0xFFF83758),
+                            ),
+                          ),
+
+                          color: Color.fromRGBO(
+                              252, 243, 246, 1.0), // button color
+                          child: InkWell(
+                            splashColor: Colors.red, // inkwell color
+                            child: const SizedBox(
+                                width: 56,
+                                height: 56,
+                                child: Icon(
+                                  Icons.facebook,
+                                  color: Colors.white,
+                                )),
+                            onTap: null,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                )
               ],
             ),
           )),
