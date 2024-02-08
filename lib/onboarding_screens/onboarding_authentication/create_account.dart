@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CreateAccountScreen extends StatefulWidget {
   const CreateAccountScreen({super.key});
@@ -105,7 +106,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                 ElevatedButton(
                   onPressed: () {},
                   child: const Text(
-                    'Login',
+                    'Create Account',
                     style: TextStyle(
                         fontFamily: 'Montserrat',
                         color: Colors.white,
@@ -121,6 +122,116 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                     ),
                   ),
                 ),
+
+                const SizedBox(height: 30),
+                const Text(
+                  '- OR Continue with -',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontFamily: 'Montserrat',
+                      color: Color.fromRGBO(87, 87, 87, 1.0),
+                      fontSize: 12),
+                ),
+                const SizedBox(height: 20),
+                Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ClipOval(
+                        child: Material(
+                          shape: const CircleBorder(
+                            side: BorderSide(
+                              color: Color(0xFFF83758),
+                            ),
+                          ),
+
+                          color: Colors.grey.shade200, // button color
+                          child: const InkWell(
+                            splashColor: Colors.red, // inkwell color
+                            child: SizedBox(
+                                width: 56,
+                                height: 56,
+                                child: Center(
+                                  child: FaIcon(
+                                    FontAwesomeIcons.google,
+                                    color: Colors.white,
+                                  ),
+                                )),
+                            onTap: null,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      ClipOval(
+                        child: Material(
+                          shape: const CircleBorder(
+                            side: BorderSide(
+                              color: Color(0xFFF83758),
+                            ),
+                          ),
+
+                          color: Colors.grey.shade200, // button color
+                          child: const InkWell(
+                            splashColor: Colors.red, // inkwell color
+                            child: SizedBox(
+                                width: 56,
+                                height: 56,
+                                child: Center(
+                                  child: FaIcon(
+                                    FontAwesomeIcons.apple,
+                                    color: Colors.black,
+                                  ),
+                                )),
+                            onTap: null,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      ClipOval(
+                        child: Material(
+                          shape: const CircleBorder(
+                            side: BorderSide(
+                              color: Color(0xFFF83758),
+                            ),
+                          ),
+
+                          color: Colors.grey.shade200, // button color
+                          child: const InkWell(
+                            splashColor: Colors.red, // inkwell color
+                            child: SizedBox(
+                                width: 56,
+                                height: 56,
+                                child: Center(
+                                  child: FaIcon(
+                                    FontAwesomeIcons.facebookF,
+                                    color: Colors.indigo,
+                                  ),
+                                )),
+                            onTap: null,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                const SizedBox(height: 10),
+                const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text('Create An Account',
+                          style: TextStyle(
+                              fontFamily: 'Montserrat', color: Colors.black)),
+                      Text('Sign Up',
+                          style: TextStyle(
+                              color: Color(0xFFF83758),
+                              fontFamily: 'Montserrat',
+                              fontWeight: FontWeight.bold,
+                              decoration: TextDecoration.underline,
+                              decorationColor: Color(0xFFF83758)))
+                    ],
+                    ),
         ],
       ),
     );
