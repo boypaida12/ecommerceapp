@@ -220,10 +220,10 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                 const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text('Create An Account',
+                      const Text('I Already have an Account',
                           style: TextStyle(
                               fontFamily: 'Montserrat', color: Colors.black)),
-                      Text('Sign Up',
+                      Text('Login',
                           style: TextStyle(
                               color: Color(0xFFF83758),
                               fontFamily: 'Montserrat',

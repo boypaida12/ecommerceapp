@@ -1,3 +1,4 @@
+import 'package:ecommerceapp/onboarding_screens/onboarding_authentication/create_account.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -196,19 +197,24 @@ class _LogInScreenState extends State<LogInScreen> {
                   ),
                 ),
                 const SizedBox(height: 10),
-                const Row(
+                 Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text('Create An Account',
+                      Text('Create An Account',
                           style: TextStyle(
                               fontFamily: 'Montserrat', color: Colors.black)),
-                      Text('Sign Up',
-                          style: TextStyle(
-                              color: Color(0xFFF83758),
-                              fontFamily: 'Montserrat',
-                              fontWeight: FontWeight.bold,
-                              decoration: TextDecoration.underline,
-                              decorationColor: Color(0xFFF83758)))
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> CreateAccountScreen()))
+                        },
+                        child: Text('Sign Up',
+                            style: TextStyle(
+                                color: Color(0xFFF83758),
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.bold,
+                                decoration: TextDecoration.underline,
+                                decorationColor: Color(0xFFF83758))),
+                      )
                     ]),
               ],
             ),
