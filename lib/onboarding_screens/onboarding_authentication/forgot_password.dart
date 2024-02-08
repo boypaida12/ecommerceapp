@@ -12,6 +12,24 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
   Widget build(BuildContext context) {
     return  Container(
       color: Colors.white,
+      child: ListView(
+        children: const [
+           SizedBox(
+                  height: 50,
+                ),
+                Text(
+                  'Forgot\password?',
+                  style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      color: Colors.black,
+                      fontSize: 36,
+                      fontWeight: FontWeight.w900,
+                      decoration: TextDecoration.none),
+                ),
+                 const SizedBox(height: 20),
+        ]
+
+      )
     );
   }
 }
