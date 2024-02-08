@@ -73,6 +73,15 @@ class _LogInScreenState extends State<LogInScreen> {
                     keyboardType: TextInputType.text,
                   ),
                 ),
+                Text(
+                  'Forgot Password?',
+                  textAlign: TextAlign.end,
+                  style: TextStyle(
+                    fontFamily: 'Montserrat',
+                    color: Color(0xFFF83758),
+                    fontSize: 12,
+                  ),
+                )
               ],
             ),
           )),
