@@ -10,6 +10,16 @@ class CreateAccountScreen extends StatefulWidget {
 class _CreateAccountScreenState extends State<CreateAccountScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return  Scaffold(
+      body: ListView(
+        children: [
+          const SizedBox(
+                  height: 50,
+                ),
+          
+        ],
+
+      ),
+    );
   }
 }
