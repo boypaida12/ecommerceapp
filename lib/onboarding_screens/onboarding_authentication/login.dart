@@ -8,27 +8,19 @@ class LogInScreen extends StatefulWidget {
 }
 
 class _LogInScreenState extends State<LogInScreen> {
-  final myController = TextEditingController();
-
-  @override
-  void dispose() {
-    myController.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
           color: Colors.white,
           child: Padding(
-            padding: const EdgeInsets.only(left: 28.0),
+            padding: const EdgeInsets.only(left: 28.0, right: 16.0),
             child: ListView(
-              children: const [
-                SizedBox(
+              children: [
+                const SizedBox(
                   height: 50,
                 ),
-                Text(
+                const Text(
                   'Welcome\nBack!',
                   style: TextStyle(
                       fontFamily: 'Montserrat',
@@ -37,17 +29,45 @@ class _LogInScreenState extends State<LogInScreen> {
                       fontWeight: FontWeight.bold,
                       decoration: TextDecoration.none),
                 ),
+                SizedBox(height: 20),
                 Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(2.0),
                   child: TextField(
-                    
                     decoration: InputDecoration(
                       filled: true,
+                      fillColor: Colors.grey[100],
                       hintText: 'Username or Email',
-                      prefixIcon: Icon(Icons.person),
+                      hintStyle: TextStyle(color: Color(0xFF626262)),
+                      prefixIcon:
+                          const Icon(Icons.person, color: Color(0xFF626262)),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.black, width: 2),
+                        borderSide: const BorderSide(
+                            color: Color(0xFFA8A8A9), width: 1.0),
+                      ),
+                    ),
+                    keyboardType: TextInputType.text,
+                  ),
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(2.0),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      fillColor: Colors.grey[100],
+                      filled: true,
+                      hintText: 'Password',
+                      suffixIcon: const Icon(Icons.visibility_off,
+                          color: Color(0xFF626262)),
+                      hintStyle: TextStyle(color: Color(0xFF626262)),
+                      prefixIcon:
+                          const Icon(Icons.lock, color: Color(0xFF626262)),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: const BorderSide(
+                            color: Color(0xFFA8A8A9), width: 1.0),
                       ),
                     ),
                     keyboardType: TextInputType.text,
