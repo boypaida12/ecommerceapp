@@ -20,7 +20,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                 height: 50,
               ),
               Text(
-                'Forgot\password?',
+                'Forgot\npassword?',
                 style: TextStyle(
                     fontFamily: 'Montserrat',
                     color: Colors.black,
@@ -62,11 +62,11 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                     ),
                   ),
                   Text(
-                    'We will send you a link to set or reset your new password',
+                    'We will send you a link to set or reset your\nnew password',
                     style: TextStyle(
                       fontFamily: 'Montserrat',
                       color: Colors.black,
-                      fontSize: 12,
+                      fontSize: 14,
                     ),
                   ),
                 ],
