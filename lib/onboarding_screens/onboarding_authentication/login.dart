@@ -102,6 +102,16 @@ class _LogInScreenState extends State<LogInScreen> {
                     ),
                   ),
                 ),
+                SizedBox(height: 30),
+                Text(
+                  'OR Continue with -',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontFamily: 'Montserrat',
+                      color: Color.fromRGBO(87, 87, 87, 1.0),
+                      fontSize: 12),
+                ),
               ],
             ),
           )),
