@@ -16,8 +16,9 @@ class _GettingStartedScreenState extends State<GettingStartedScreen> {
       body: Stack(
         fit: StackFit.expand,
         children: [
-          ImageFiltered(
-              imageFilter: ImageFilter.blur(sigmaX: 1, sigmaY: 2),
+          ColorFiltered(
+              colorFilter: ColorFilter.mode(
+                  Colors.black.withOpacity(0.4), BlendMode.darken),
               child:
                   Image.asset('assets/images/clothes.png', fit: BoxFit.cover)),
           Positioned(
