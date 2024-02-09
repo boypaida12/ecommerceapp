@@ -1,3 +1,4 @@
+import 'package:ecommerceapp/screens/account_verification.dart';
 import 'package:ecommerceapp/screens/create_account.dart';
 import 'package:ecommerceapp/screens/home.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const CreateAccoutPage(),
+      home: const AccountVerificationPage(),
     );
   }
 }
