@@ -1,3 +1,4 @@
+import 'package:ecommerceapp/onboarding_screens/getStarted/getting_started.dart';
 import 'package:ecommerceapp/onboarding_screens/onboarding_authentication/login.dart';
 
 
@@ -10,7 +11,7 @@ class StyleApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
      
-      home:  LogInScreen(),
+      home:  GettingStartedScreen(),
     );
   }
 }
