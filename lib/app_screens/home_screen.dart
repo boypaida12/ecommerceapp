@@ -76,22 +76,92 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           SizedBox(height: 10),
-          Row(
-            children: [
-              Column(
-                children: [
-                  ClipOval(
-                    child: Image.asset('assets/images/featured.png',
-                        fit: BoxFit.cover, height: 50, width: 50),
-                  ),
-                  Text('Beauty',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 12,
-                          fontFamily: 'Montserrat')),
-                ],
-              )
-            ],
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 6.0, vertical: 8),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Column(
+                      children: [
+                        ClipOval(
+                          child: Image.asset('assets/images/featured.png',
+                              fit: BoxFit.cover, height: 50, width: 50),
+                        ),
+                        Text('Beauty',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12,
+                                fontFamily: 'Montserrat')),
+                      ],
+                    ),
+                    SizedBox(width: 10),
+                    Column(
+                      children: [
+                        ClipOval(
+                          child: Image.asset('assets/images/fashion.png',
+                              fit: BoxFit.cover, height: 50, width: 50),
+                        ),
+                        Text('Fashion',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12,
+                                fontFamily: 'Montserrat')),
+                      ],
+                    ),
+                    SizedBox(width: 10),
+                    Column(
+                      children: [
+                        ClipOval(
+                          child: Image.asset('assets/images/kids.png',
+                              fit: BoxFit.cover, height: 50, width: 50),
+                        ),
+                        Text('Kids',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12,
+                                fontFamily: 'Montserrat')),
+                      ],
+                    ),
+                    SizedBox(width: 10),
+                    Column(
+                      children: [
+                        ClipOval(
+                          child: Image.asset('assets/images/mens.png',
+                              fit: BoxFit.cover, height: 50, width: 50),
+                        ),
+                        Text('Mens',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12,
+                                fontFamily: 'Montserrat')),
+                      ],
+                    ),
+                    SizedBox(width: 10),
+                    Column(
+                      children: [
+                        ClipOval(
+                          child: Image.asset('assets/images/women.png',
+                              fit: BoxFit.cover, height: 50, width: 50),
+                        ),
+                        Text('Womens',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12,
+                                fontFamily: 'Montserrat')),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ),
           )
         ]),
       ),
