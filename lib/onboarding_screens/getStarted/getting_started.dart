@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:ecommerceapp/app_screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class GettingStartedScreen extends StatefulWidget {
@@ -46,7 +47,12 @@ class _GettingStartedScreenState extends State<GettingStartedScreen> {
                     ),
                     SizedBox(height: 40),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                         Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => HomeScreen()),
+            );
+                      },
                       child: const Text(
                         'Login',
                         style: TextStyle(
