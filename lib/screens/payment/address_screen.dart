@@ -12,7 +12,9 @@ class _AddressScreenState extends State<AddressScreen> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: CustomNavbar(title: 'Address'),
+      appBar: CustomNavbar(
+        title: 'Address',
+      ),
     );
   }
 }

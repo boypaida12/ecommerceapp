@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:ecommerceapp/payment/address_screen.dart';
+import 'package:ecommerceapp/screens/payment/address_screen.dart';
 import 'package:ecommerceapp/shared/customnavbar.dart';
 import 'package:flutter/material.dart';
 
@@ -46,14 +46,14 @@ class _PaymentScreenState extends State<PaymentScreen> {
             ),
             Row(
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(64),
-                    border: Border.all(width: 4)
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(16),
+                  child: Image.asset(
+                    'assets/images/map_img.png',
+                    fit: BoxFit.cover,
+                    width: 150,
+                    height: 100,
                   ),
-                  width: 150,
-                  height: 100,
-                  child: Image.asset('assets/images/map_img.png', fit: BoxFit.cover,)
                 )
               ],
             )

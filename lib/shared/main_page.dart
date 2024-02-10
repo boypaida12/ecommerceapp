@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
-import 'package:ecommerceapp/favorite_page.dart';
-import 'package:ecommerceapp/home_page.dart';
-import 'package:ecommerceapp/my_order_page.dart';
-import 'package:ecommerceapp/my_profile_page.dart';
+import 'package:ecommerceapp/screens/favorite/favorite_page.dart';
+import 'package:ecommerceapp/screens/home/home_page.dart';
+import 'package:ecommerceapp/screens/order/my_order_page.dart';
+import 'package:ecommerceapp/screens/profile/my_profile_page.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
