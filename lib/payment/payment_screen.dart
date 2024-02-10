@@ -20,25 +20,45 @@ class _PaymentScreenState extends State<PaymentScreen> {
       ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 16),
-        child:
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-          Text(
-            'Address',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Address',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                TextButton(
+                  style: ButtonStyle(),
+                  onPressed: () {
+                    Navigator.push(
+                      // Use push for page-based navigation
+                      context,
+                      MaterialPageRoute(builder: (context) => AddressScreen()),
+                    );
+                  },
+                  child: Text('Edit'),
+                )
+              ],
             ),
-          ),
-          TextButton(
-              style: ButtonStyle(),
-              onPressed: () {
-                Navigator.push(
-                  // Use push for page-based navigation
-                  context,
-                  MaterialPageRoute(builder: (context) => AddressScreen()),
-                );
-              },
-              child: Text('Edit'))
-        ]),
+            Row(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(64),
+                    border: Border.all(width: 4)
+                  ),
+                  width: 150,
+                  height: 100,
+                  child: Image.asset('assets/images/map_img.png', fit: BoxFit.cover,)
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
