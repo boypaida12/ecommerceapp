@@ -53,17 +53,42 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'All Featured',
+                  style: TextStyle(
+                      fontFamily: 'Montserrat',
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                ),
+                Row(
+                  children: [
+                    PillWidget(trailingIcon: Icons.sort, text: 'Sort'),
+                    SizedBox(width: 10),
+                    PillWidget(trailingIcon: Icons.filter, text: 'Filter')
+                  ],
+                )
+              ],
+            ),
+          ),
+          SizedBox(height: 10),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                'All Featured',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              Row(
+              Column(
                 children: [
-                  PillWidget(trailingIcon: Icons.sort, text: 'Sort'),
-                  PillWidget(trailingIcon: Icons.filter, text: 'Filter')
+                  ClipOval(
+                    child: Image.asset('assets/images/featured.png',
+                        fit: BoxFit.cover, height: 50, width: 50),
+                  ),
+                  Text('Beauty',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12,
+                          fontFamily: 'Montserrat')),
                 ],
               )
             ],
