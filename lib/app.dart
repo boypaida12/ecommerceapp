@@ -1,5 +1,6 @@
-import 'package:ecommerceapp/main_page.dart';
+import 'package:ecommerceapp/screens/payment/payment_screen.dart';
 import 'package:flutter/material.dart';
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -10,11 +11,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MainPage(),
+      home: const PaymentScreen(),
     );
   }
 }
