@@ -162,8 +162,124 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-          )
+          ),
+          // Card(
+          //     margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          //     shape: RoundedRectangleBorder(
+          //         borderRadius: BorderRadius.circular(10)),
+          //     clipBehavior: Clip.antiAliasWithSaveLayer,
+          //     elevation: 5,
+          //     child: Stack(
+          //       fit: StackFit.expand,
+          //       children: [
+          //         Image.asset('assets/images/cardImage.png',
+          //             fit: BoxFit.cover),
+          //         Positioned(
+          //           top: 50,
+          //           left: 16,
+          //           child: Column(
+          //             children: [
+          //               Text('50 - 40 % OFF',
+          //                   style: TextStyle(
+          //                       fontSize: 40,
+          //                       fontWeight: FontWeight.bold,
+          //                       fontFamily: 'Montserrat',
+          //                       color: Colors.white)),
+          //               SizedBox(height: 10),
+          //               Text('Now in (product)',
+          //                   style: TextStyle(
+          //                       fontSize: 16,
+          //                       fontWeight: FontWeight.normal,
+          //                       fontFamily: 'Montserrat',
+          //                       color: Colors.white)),
+          //               Text('All colors',
+          //                   style: TextStyle(
+          //                       fontSize: 16,
+          //                       fontWeight: FontWeight.normal,
+          //                       fontFamily: 'Montserrat',
+          //                       color: Colors.white)),
+          //               ElevatedButton(
+          //                 onPressed: () {},
+          //                 child: Row(
+          //                   children: [
+          //                     Text('Shop Now',
+          //                         style: TextStyle(
+          //                             fontFamily: 'Montserrat',
+          //                             color: Colors.white,
+          //                             fontSize: 16,
+          //                             fontWeight: FontWeight.bold)),
+          //                     Icon(Icons.arrow_forward,
+          //                         color: Colors.white, size: 16)
+          //                   ],
+          //                 ),
+          //                 style: ElevatedButton.styleFrom(
+          //                   backgroundColor: Color(0xFFF83758),
+          //                   foregroundColor: Colors.white,
+          //                   minimumSize: Size(100, 50),
+          //                   shape: RoundedRectangleBorder(
+          //                     borderRadius: BorderRadius.circular(6),
+          //                   ),
+          //                 ),
+          //               )
+          //             ],
+          //           ),
+          //         )
+          //       ],
+          //     )
+          Stack(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Image.asset('assets/images/cardImage.png',
+                    fit: BoxFit.cover),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 40,
+                  left: 34.0,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text('50 - 40% OFF',
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w800,
+                            fontFamily: 'Montserrat',
+                            color: Colors.white)),
+                    SizedBox(height: 10),
+                    Text('Now in (product)\n All colors',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'Montserrat')),
+                    SizedBox(height: 10),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: Text('Buy Now',
+                          style: TextStyle(
+                              fontFamily: 'Montserrat',
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold)),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(0xFFFA7189),
+                        foregroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
         ]),
+
+        
       ),
     );
   }

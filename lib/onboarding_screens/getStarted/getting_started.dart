@@ -48,10 +48,10 @@ class _GettingStartedScreenState extends State<GettingStartedScreen> {
                     SizedBox(height: 40),
                     ElevatedButton(
                       onPressed: () {
-                         Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => HomeScreen()),
-            );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => HomeScreen()),
+                        );
                       },
                       child: const Text(
                         'Login',
