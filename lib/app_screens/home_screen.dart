@@ -53,16 +53,21 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children:[
-            Text('All Featured', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-            Row(children: [
-              
-
-            ],)
-          ],)
+            children: [
+              Text(
+                'All Featured',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              Row(
+                children: [
+                  PillWidget(trailingIcon: Icons.sort, text: 'Sort'),
+                  PillWidget(trailingIcon: Icons.filter, text: 'Filter')
+                ],
+              )
+            ],
+          )
         ]),
       ),
     );
@@ -70,10 +75,24 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class PillWidget extends StatelessWidget {
-  const PillWidget({super.key});
+  final IconData trailingIcon;
+  final String text;
+
+  PillWidget({required this.trailingIcon, required this.text});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      child: Row(mainAxisSize: MainAxisSize.min, children: [
+        Text(text, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+        SizedBox(width: 5),
+        Icon(trailingIcon, size: 16, color: Colors.grey[600])
+      ]),
+    );
   }
 }
