@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
 
+import 'package:ecommerceapp/shared/custombutton.dart';
 import 'package:flutter/material.dart';
 
 class FavoritePage extends StatefulWidget {
@@ -45,7 +46,7 @@ class _FavoritePageState extends State<FavoritePage> {
                       ),                   
                     ],
                   ),
-                   Image(image: AssetImage("assets/filter.png"))
+                   Image(image: AssetImage("assets/images/filter.png"))
                 ],
               ),
             ),
