@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
 
 import 'package:ecommerceapp/shared/custombutton.dart';
+import 'package:ecommerceapp/shared/product_card.dart';
+import 'package:ecommerceapp/shared/products.dart';
 import 'package:flutter/material.dart';
 
 class FavoritePage extends StatefulWidget {
@@ -11,6 +13,8 @@ class FavoritePage extends StatefulWidget {
 }
 
 class _FavoritePageState extends State<FavoritePage> {
+  final List<Product> favoriteProducts = [];
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -166,11 +170,21 @@ class _FavoritePageState extends State<FavoritePage> {
                        onTap: () => (),
                      ),
                   ),
-
-
                 ],
               ),
-            )
+            ),
+            GridView.builder(
+              gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisExtent: 5,
+                crossAxisSpacing: 5
+                ), 
+              itemCount: favoriteProducts.length,
+              itemBuilder:(context, index) {
+                Product product = favoriteProducts[index];
+                return ProductCard(product: product);
+              },
+              )
 
           ],
         ),

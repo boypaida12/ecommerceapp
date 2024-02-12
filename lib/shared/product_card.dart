@@ -12,22 +12,29 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
-      children: [
-        Image.network(product.imageURL,
-        fit: BoxFit.cover,
-        height: 100,
-        ),
-        SizedBox(height: 10,),
-        Text(product.title,
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-        ),
-        Text(product.subtitle,
-        style: TextStyle(fontSize: 12, color: Colors.grey),
-        ),
-        Text('\$${product.price}',
-        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),)
-      ],
+    return  Container(
+      padding: EdgeInsets.all(8.0),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        boxShadow:[BoxShadow(color: Colors.grey.withOpacity(0.2), blurRadius: 5.0)]
+      ),
+      child: Column(
+        children: [
+          Image.network(product.imageURL,
+          fit: BoxFit.cover,
+          height: 100,
+          ),
+          SizedBox(height: 10,),
+          Text(product.title,
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          ),
+          Text(product.subtitle,
+          style: TextStyle(fontSize: 12, color: Colors.grey),
+          ),
+          Text('\$${product.price}',
+          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),)
+        ],
+      ),
     );
   }
 }

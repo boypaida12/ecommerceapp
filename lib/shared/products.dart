@@ -4,7 +4,7 @@ class Product {
   final String imageURL;
   final String title;
   final String subtitle;
-  final Double price;
+  final double price;
 
   Product({
     required this.imageURL, 
