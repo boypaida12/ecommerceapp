@@ -1,6 +1,4 @@
 import 'package:ecommerceapp/screens/favorite/favorite_page.dart';
-import 'package:ecommerceapp/screens/order/my_order_page.dart';
-import 'package:ecommerceapp/screens/payment/payment_screen.dart';
 import 'package:flutter/material.dart';
 
 

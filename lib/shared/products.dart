@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 class Product {
   final String imageURL;
   final String title;
