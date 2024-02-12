@@ -1,8 +1,10 @@
+import 'dart:ffi';
+
 class Product {
   final String imageURL;
   final String title;
   final String subtitle;
-  final String price;
+  final Double price;
 
   Product({
     required this.imageURL, 
