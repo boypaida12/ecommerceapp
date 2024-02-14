@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:ecommerceapp/screens/payment/address_screen.dart';
+// import 'package:ecommerceapp/shared/custombottomsheet.dart';
 // import 'package:ecommerceapp/shared/custombutton.dart';
 import 'package:ecommerceapp/shared/customnavbar.dart';
 import 'package:flutter/material.dart';
@@ -122,8 +123,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                             ),
                           ),
                           RichText(
-                            text: TextSpan(
-                              children: [
+                            text: TextSpan(children: [
                               TextSpan(
                                 text: 'Color:',
                                 style: TextStyle(color: Colors.blueGrey),
@@ -138,7 +138,8 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       ),
                       Align(
                         alignment: Alignment.bottomCenter,
-                        child: Text(r"$67.00"))
+                        child: Text(r"$67.00"),
+                      )
                     ],
                   ),
                 ],
