@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 
 class CustomBottomSheet extends StatelessWidget {
   final Widget child;
-  
+
   const CustomBottomSheet({
     Key? key,
     required this.child,
@@ -24,7 +24,7 @@ class CustomBottomSheet extends StatelessWidget {
       },
       builder: (context) => Container(
         child: child,
-      )
+      ),
     );
   }
 }
