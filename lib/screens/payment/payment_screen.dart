@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:ecommerceapp/screens/payment/address_screen.dart';
+import 'package:ecommerceapp/screens/payment/shared/custompaymentmethod.dart';
 import 'package:ecommerceapp/screens/payment/shared/customroundedcontainer.dart';
 import 'package:ecommerceapp/screens/payment/shared/product_rows.dart';
 import 'package:ecommerceapp/screens/payment/shared/sectiontitle.dart';
@@ -23,6 +24,8 @@ class PaymentScreen extends StatefulWidget {
 }
 
 class _PaymentScreenState extends State<PaymentScreen> {
+  bool? _isChecked = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -134,11 +137,51 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 buttonText: 'Checkout Now',
                 onPressed: () {
                   showModalBottomSheet(
-                      context: context,
-                      builder: (context) => CustomBottomSheet(
-                          child:
-                              Column() //can change Column to any widget depending on your screen's use case
-                          ));
+                    context: context,
+                    builder: (context) => CustomBottomSheet(
+                      child: Container(
+                        padding: EdgeInsets.all(16),
+                        height: MediaQuery.of(context).size.height * .45,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            SectionTitle(sectionTitle: 'Payment Method'),
+                            CustomPaymentMethod(
+                              bankCardImg: 'assets/images/map_img.png',
+                              cardNumberorEmail: 'kab****@gmail.com',
+                              cardProviderName: 'PayPal',
+                              isChecked: false,
+                              onChanged: (newValue) => setState(()=> _isChecked = newValue)
+                            ),
+                            CustomPaymentMethod(
+                              bankCardImg: 'assets/images/map_img.png',
+                              cardNumberorEmail: '**** *** **5632',
+                              cardProviderName: 'Master Card',
+                              isChecked: _isChecked,
+                              onChanged: (newValue) => setState(()=> _isChecked = newValue!)
+                            ),
+                            Card(
+                              child: Container(
+                                padding: EdgeInsets.all(12),
+                                child: Row(
+                                  children: const [
+                                    Icon(Icons.add_circle_outline_outlined),
+                                    SizedBox(width: 16,),
+                                    Text('Add Payment Method',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            CustomButton(buttonText: 'Confirm Payment', onPressed: (){})
+                          ],
+                        ),
+                      ), //can change Column to any widget depending on your screen's use case
+                    ),
+                  );
                 }),
           ],
         ),

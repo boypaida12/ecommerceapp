@@ -33,7 +33,20 @@ class CustomBottomSheet extends StatelessWidget {
         Navigator.pop(context); // When the user taps outside the Bottom Sheet, close it.
       },
       builder: (context) => Container(
-        child: child, // the child Widget that is required.
+        padding: const EdgeInsets.all(8),
+        child: Column(
+          children: [
+            Container(
+              width: 80,
+              height: 8,
+              decoration: BoxDecoration(
+                color: Colors.grey.shade400,
+                borderRadius: const BorderRadius.all(Radius.circular(8))
+              ),
+            ),
+            child,
+          ],
+        ), // the child Widget that is required.
       ),
     );
   }
