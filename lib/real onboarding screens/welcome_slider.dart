@@ -1,3 +1,4 @@
+import 'package:ecommerceapp/real%20onboarding%20screens/welcome_model.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -143,10 +144,3 @@ class _WelcomePageState extends State<WelcomePage> {
   }
 }
 
-class WelcomeSlider {
-  final String title;
-  final String description;
-  final String image;
-  WelcomeSlider(
-      {required this.title, required this.description, required this.image});
-}
