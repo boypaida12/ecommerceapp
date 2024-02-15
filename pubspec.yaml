@@ -20,6 +20,7 @@ dependencies:
   dots_indicator: ^2.1.2
   font_awesome_flutter: ^10.7.0
   flutter_svg: ^2.0.9
+  introduction_slider: ^2.0.1
   
 
 dev_dependencies:
