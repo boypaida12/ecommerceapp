@@ -69,25 +69,39 @@ class _WelcomePageState extends State<WelcomePage> {
                       ),
                       const SizedBox(height: 25.0),
                       Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: List.generate(3, (index) {
-                            return Padding(
-                              padding:
-                                  const EdgeInsets.only(top: 20.0, right: 8),
-                              child: AnimatedContainer(
-                                  duration: const Duration(milliseconds: 300),
-                                  height: 10,
-                                  width: 10,
-                                  decoration: BoxDecoration(
-                                    color: _currentPage == index
-                                        ? Color(0xFF514EB6)
-                                        : Colors.grey[300],
-                                    borderRadius: BorderRadius.circular(5),
-                                  )),
-                            );
-                          }),),
-
-                          
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: List.generate(3, (index) {
+                          return Padding(
+                            padding: const EdgeInsets.only(top: 20.0, right: 8),
+                            child: AnimatedContainer(
+                                duration: const Duration(milliseconds: 300),
+                                height: 10,
+                                width: 10,
+                                decoration: BoxDecoration(
+                                  color: _currentPage == index
+                                      ? Color(0xFF514EB6)
+                                      : Colors.grey[300],
+                                  borderRadius: BorderRadius.circular(5),
+                                )),
+                          );
+                        }),
+                      ),
+                      SizedBox(height: 15),
+                      OutlinedButton(
+                          onPressed: () {}, child: Text("Create Account")),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        child: Text(
+                          "Already have an account?",
+                          style: Theme.of(context)
+                              .textTheme
+                              .headlineMedium
+                              ?.copyWith(
+                                  color: Color(0xFF514EB6),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16),
+                        ),
+                      )
                     ],
                   );
                 },
