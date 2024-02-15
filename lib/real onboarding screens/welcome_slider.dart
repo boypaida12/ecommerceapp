@@ -8,37 +8,66 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
-
- final _pageController = PageController();
+  final _pageController = PageController();
   int _currentPage = 0;
-
 
   @override
   Widget build(BuildContext context) {
-    return   MaterialApp(
-      home: Scaffold(
-        body: Padding(
-          padding: EdgeInsets.all(14.0),
-          child: SafeArea(
-            child:  Column(
-              children: [
-                Expanded(
+    return MaterialApp(
+        home: Scaffold(
+      body: Padding(
+        padding: EdgeInsets.all(14.0),
+        child: SafeArea(
+          child: Column(
+            children: [
+              Expanded(
                   child: PageView.builder(
-                    controller: _pageController,
-                    onPageChanged: (value) {
-                      setState(() {
-                        _currentPage = value;
-                      }); 
-                    },
-                    
-                  )
-                )
-                
-              ],
-            ),
+                controller: _pageController,
+                onPageChanged: (value) {
+                  setState(() {
+                    _currentPage = value;
+                  });
+                },
+                itemCount: 3,
+                itemBuilder: (context, index) {
+                  return Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(24.0),
+                        child: Container(
+                            height: 350,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30.0),
+                              image: DecorationImage(
+                                  image: AssetImage('assets/images/bag.jpg'),
+                                  fit: BoxFit.cover),
+                            )),
+                      ),
+                      SizedBox(height: 15.0),
+                      Text(
+                        "Various Collections of the Latest Products",
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context)
+                            .textTheme
+                            .headlineMedium
+                            ?.copyWith(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 24),
+                      ),
+                      const SizedBox(height: 15.0),
+                      Text(
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at vulputate ipsum,",
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  );
+                },
+              ))
+            ],
           ),
         ),
-      )
-    );
+      ),
+    ));
   }
 }
