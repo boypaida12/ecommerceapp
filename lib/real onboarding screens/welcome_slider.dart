@@ -59,7 +59,35 @@ class _WelcomePageState extends State<WelcomePage> {
                       Text(
                         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at vulputate ipsum,",
                         textAlign: TextAlign.center,
+                        style: Theme.of(context)
+                            .textTheme
+                            .headlineMedium
+                            ?.copyWith(
+                                color: Colors.black,
+                                fontWeight: FontWeight.normal,
+                                fontSize: 16),
                       ),
+                      const SizedBox(height: 25.0),
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: List.generate(3, (index) {
+                            return Padding(
+                              padding:
+                                  const EdgeInsets.only(top: 20.0, right: 8),
+                              child: AnimatedContainer(
+                                  duration: const Duration(milliseconds: 300),
+                                  height: 10,
+                                  width: 10,
+                                  decoration: BoxDecoration(
+                                    color: _currentPage == index
+                                        ? Color(0xFF514EB6)
+                                        : Colors.grey[300],
+                                    borderRadius: BorderRadius.circular(5),
+                                  )),
+                            );
+                          }),),
+
+                          
                     ],
                   );
                 },
