@@ -20,18 +20,18 @@ class _WelcomePageState extends State<WelcomePage> {
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at vulputate ipsum,",
     ),
     WelcomeSlider(
-      image: 'assets/images/bag.jpg',
-      title: "Various Collections of the Latest Products",
+      image: 'assets/images/clothes.jpg',
+      title: "Complete Collections of Colors and Sizes",
       description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at vulputate ipsum,",
     ),
     WelcomeSlider(
-      image: 'assets/images/bag.jpg',
-      title: "Various Collections of the Latest Products",
+      image: 'assets/images/bag2.jpg',
+      title: "Find the most suitable outfit for You",
       description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at vulputate ipsum,",
     ),
-  ];  
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -143,4 +143,3 @@ class _WelcomePageState extends State<WelcomePage> {
     ));
   }
 }
-
