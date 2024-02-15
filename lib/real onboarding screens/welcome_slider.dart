@@ -110,16 +110,19 @@ class _WelcomePageState extends State<WelcomePage> {
                         }),
                       ),
                       SizedBox(height: 15),
-                      OutlinedButton(
-                          style: OutlinedButton.styleFrom(
-                              foregroundColor: Colors.white,
-                              backgroundColor: Color(0xFF514EB6),
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 40.0, vertical: 15.0),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30.0))),
-                          onPressed: () {},
-                          child: Text("Create Account")),
+                      Container(
+                        width: MediaQuery.of(context).size.width - 48,
+                        child: OutlinedButton(
+                            style: OutlinedButton.styleFrom(
+                                foregroundColor: Colors.white,
+                                backgroundColor: Color(0xFF514EB6),
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 40.0, vertical: 15.0),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30.0))),
+                            onPressed: () {},
+                            child: Text("Create Account")),
+                      ),
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 8.0),
                         child: Text(
