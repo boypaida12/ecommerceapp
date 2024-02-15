@@ -11,6 +11,27 @@ class _WelcomePageState extends State<WelcomePage> {
   final _pageController = PageController();
   int _currentPage = 0;
 
+  List<WelcomeSlider> welcomeSlider = [
+    WelcomeSlider(
+      image: 'assets/images/bag.jpg',
+      title: "Various Collections of the Latest Products",
+      description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at vulputate ipsum,",
+    ),
+    WelcomeSlider(
+      image: 'assets/images/bag.jpg',
+      title: "Various Collections of the Latest Products",
+      description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at vulputate ipsum,",
+    ),
+    WelcomeSlider(
+      image: 'assets/images/bag.jpg',
+      title: "Various Collections of the Latest Products",
+      description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at vulputate ipsum,",
+    ),
+  ];  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -88,7 +109,15 @@ class _WelcomePageState extends State<WelcomePage> {
                       ),
                       SizedBox(height: 15),
                       OutlinedButton(
-                          onPressed: () {}, child: Text("Create Account")),
+                          style: OutlinedButton.styleFrom(
+                              foregroundColor: Colors.white,
+                              backgroundColor: Color(0xFF514EB6),
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 40.0, vertical: 15.0),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30.0))),
+                          onPressed: () {},
+                          child: Text("Create Account")),
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 8.0),
                         child: Text(
@@ -112,4 +141,12 @@ class _WelcomePageState extends State<WelcomePage> {
       ),
     ));
   }
+}
+
+class WelcomeSlider {
+  final String title;
+  final String description;
+  final String image;
+  WelcomeSlider(
+      {required this.title, required this.description, required this.image});
 }
