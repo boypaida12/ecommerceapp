@@ -50,8 +50,9 @@ class _WelcomePageState extends State<WelcomePage> {
                     _currentPage = value;
                   });
                 },
-                itemCount: 3,
+                itemCount: welcomeSlider.length,
                 itemBuilder: (context, index) {
+                  final item = welcomeSlider[index];
                   return Column(
                     children: [
                       Padding(
@@ -61,13 +62,13 @@ class _WelcomePageState extends State<WelcomePage> {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30.0),
                               image: DecorationImage(
-                                  image: AssetImage('assets/images/bag.jpg'),
+                                  image: AssetImage(item.image),
                                   fit: BoxFit.cover),
                             )),
                       ),
                       SizedBox(height: 15.0),
                       Text(
-                        "Various Collections of the Latest Products",
+                        item.title,
                         textAlign: TextAlign.center,
                         style: Theme.of(context)
                             .textTheme
@@ -79,7 +80,7 @@ class _WelcomePageState extends State<WelcomePage> {
                       ),
                       const SizedBox(height: 15.0),
                       Text(
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at vulputate ipsum,",
+                        item.description,
                         textAlign: TextAlign.center,
                         style: Theme.of(context)
                             .textTheme
