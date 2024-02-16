@@ -1,3 +1,4 @@
+import 'package:ecommerceapp/screens/real%20onboarding%20screens/welcome_slider.dart';
 import 'package:flutter/material.dart';
 
 class RealSplashScreen extends StatefulWidget {
@@ -10,6 +11,10 @@ class RealSplashScreen extends StatefulWidget {
 class _RealSplashScreenState extends State<RealSplashScreen> {
   @override
   Widget build(BuildContext context) {
+    Future.delayed(Duration(seconds: 3), () {
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => const WelcomePage()));
+    });
     return Container(
       decoration: const BoxDecoration(
         color: Color(0xFF514EB6),
