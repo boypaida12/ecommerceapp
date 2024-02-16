@@ -1,8 +1,6 @@
-import 'package:ecommerceapp/screens/favorite/favorite_page.dart';
 import 'package:ecommerceapp/screens/real%20onboarding%20screens/real_splash_screen.dart';
-import 'package:ecommerceapp/screens/real%20onboarding%20screens/welcome_slider.dart';
-import 'package:flutter/material.dart';
 
+import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -16,7 +14,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const WelcomePage(),
+      home: const RealSplashScreen(),
     );
   }
 }
