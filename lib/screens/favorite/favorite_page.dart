@@ -27,14 +27,29 @@ class _FavoritePageState extends State<FavoritePage> {
   ),
   ];
 
+  List<Product> filteredProducts = []; 
+
+
+  void _onSearchChanged() {
+    setState(() {
+      filteredProducts = sampleProducts.where((product) =>
+          product.title.toLowerCase().contains(searchController.text.toLowerCase())
+      ).toList();
+    });
+  }
+
 
   @override
   void initState() {
     //to be replaced when api is available
     super.initState();
-        favoriteProducts.addAll(sampleProducts);
+    favoriteProducts.addAll(sampleProducts);
+      filteredProducts = sampleProducts; // Initialize filteredProducts here
+    searchController.addListener(_onSearchChanged);
 
   }
+
+
 
   @override
   Widget build(BuildContext context) {
