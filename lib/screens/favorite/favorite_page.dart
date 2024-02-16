@@ -1,5 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
 
+import 'package:ecommerceapp/shared/custombutton.dart';
+import 'package:ecommerceapp/shared/product_card.dart';
+import 'package:ecommerceapp/shared/products.dart';
+import 'package:ecommerceapp/shared/text_widgets/text_body.dart';
+import 'package:ecommerceapp/shared/text_widgets/text_heading.dart';
 import 'package:flutter/material.dart';
 
 class FavoritePage extends StatefulWidget {
@@ -10,6 +15,44 @@ class FavoritePage extends StatefulWidget {
 }
 
 class _FavoritePageState extends State<FavoritePage> {
+
+  TextEditingController searchController = TextEditingController();
+
+  final List<Product> favoriteProducts = [];
+
+  final List<Product> sampleProducts = [
+    Product(
+    title: "Designer Bag",
+    subtitle: "Sample Product",
+    price: 99.99, 
+    imageURL: 'assets/images/product1.jpg',
+  ),
+  ];
+
+  List<Product> filteredProducts = []; 
+
+
+  void _onSearchChanged() {
+    setState(() {
+      filteredProducts = sampleProducts.where((product) =>
+          product.title.toLowerCase().contains(searchController.text.toLowerCase())
+      ).toList();
+    });
+  }
+
+
+  @override
+  void initState() {
+    //to be replaced when api is available
+    super.initState();
+    favoriteProducts.addAll(sampleProducts);
+      filteredProducts = sampleProducts; // Initialize filteredProducts here
+    searchController.addListener(_onSearchChanged);
+
+  }
+
+
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,32 +68,22 @@ class _FavoritePageState extends State<FavoritePage> {
         body: Column(
           children: [
             SizedBox(height: 20,),
-            Container(
-              padding: EdgeInsets.all(20),
-              height: 60,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.grey)
+            TextField(
+              controller: searchController,
+              decoration: InputDecoration(
+                border:OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12), 
+                  borderSide: BorderSide(color: Colors.grey)           
+                ),
+                prefixIcon: Icon(Icons.search),
+                suffixIcon:  Icon(Icons.filter_list),
+                hintText: "Search something...",
+               contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Icon(Icons.search),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 10),
-                        child: Text("Search smething...",
-                        style: TextStyle(color: Colors.grey),),
-                      ),                   
-                    ],
-                  ),
-                   Image(image: AssetImage("assets/filter.png"))
-                ],
-              ),
-            ),
-            SizedBox(height: 10,)
-            ,SingleChildScrollView(
+               ),
+            SizedBox(height: 20,),
+            SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
@@ -91,10 +124,7 @@ class _FavoritePageState extends State<FavoritePage> {
                        child: Container(
                         child: Padding(
                           padding: const EdgeInsets.all(11),
-                          child: Text("Latest",
-                          style: TextStyle(
-                            color: Colors.grey
-                          ),),
+                         child: TextHeading(text: "Latest", weight: FontWeight.normal, ),
                         ),
                         decoration: BoxDecoration(
                           // color: Colors.deepPurple[900],
@@ -111,10 +141,7 @@ class _FavoritePageState extends State<FavoritePage> {
                        child: Container(
                         child: Padding(
                           padding: const EdgeInsets.all(11),
-                          child: Text("Most Popular",
-                          style: TextStyle(
-                            color: Colors.grey
-                          ),),
+                          child: TextHeading(text: "Most Popular", weight: FontWeight.normal,),
                         ),
                         decoration: BoxDecoration(
                           // color: Colors.deepPurple[900],
@@ -131,10 +158,7 @@ class _FavoritePageState extends State<FavoritePage> {
                        child: Container(
                         child: Padding(
                           padding: const EdgeInsets.all(11),
-                          child: Text("Cheapest",
-                          style: TextStyle(
-                            color: Colors.grey
-                          ),),
+                          child: TextHeading(text: "Cheapest", weight: FontWeight.normal, ),
                         ),
                         decoration: BoxDecoration(
                           // color: Colors.deepPurple[900],
@@ -151,10 +175,7 @@ class _FavoritePageState extends State<FavoritePage> {
                        child: Container(
                         child: Padding(
                           padding: const EdgeInsets.all(11),
-                          child: Text("Trending",
-                          style: TextStyle(
-                            color: Colors.grey
-                          ),),
+                          child: TextHeading(text: "Trending", weight: FontWeight.normal, ),
                         ),
                         decoration: BoxDecoration(
                           // color: Colors.deepPurple[900],
@@ -165,10 +186,23 @@ class _FavoritePageState extends State<FavoritePage> {
                        onTap: () => (),
                      ),
                   ),
-
-
                 ],
               ),
+            ),
+            SizedBox(height: 20,),
+            Expanded(
+              child: GridView.builder(
+                gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisExtent: 100,
+                  crossAxisSpacing: 5
+                  ), 
+                itemCount: favoriteProducts.length,
+                itemBuilder:(context, index) {
+                  Product product = favoriteProducts[index];
+                  return ProductCard(product: product);
+                },
+                ),
             )
 
           ],
