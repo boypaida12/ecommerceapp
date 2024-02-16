@@ -1,17 +1,17 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first, must_be_immutable
 import 'package:flutter/material.dart';
 
-class TextHeadingSmall extends StatelessWidget {
+class TextSmall extends StatelessWidget {
   Color color;
   double size;
   final String text;
   FontWeight weight;
   
-  TextHeadingSmall({
+  TextSmall({
     Key? key,
     this.color = Colors.black54,
     this.size = 10,
-    this.weight = FontWeight.bold,
+    this.weight = FontWeight.normal,
     required this.text,
   }) : super(key: key);
 
