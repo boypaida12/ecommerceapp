@@ -5,10 +5,13 @@ class TextHeadingExtraLarge extends StatelessWidget {
   final String text;
   double size;
   Color color;
+  FontWeight weight;
+
   TextHeadingExtraLarge({
     Key? key,
     required this.text,
     this.size = 20,
+    this.weight = FontWeight.bold,
     this.color = Colors.black87,
   }) : super(key: key);
 
@@ -19,7 +22,7 @@ class TextHeadingExtraLarge extends StatelessWidget {
       style: TextStyle(
         color: color,
         fontSize: size,
-        fontWeight: FontWeight.bold
+        fontWeight: weight,
       ),
     );
   }

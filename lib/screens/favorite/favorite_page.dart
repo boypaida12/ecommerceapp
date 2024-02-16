@@ -3,6 +3,8 @@
 import 'package:ecommerceapp/shared/custombutton.dart';
 import 'package:ecommerceapp/shared/product_card.dart';
 import 'package:ecommerceapp/shared/products.dart';
+import 'package:ecommerceapp/shared/text_widgets/text_body.dart';
+import 'package:ecommerceapp/shared/text_widgets/text_heading.dart';
 import 'package:flutter/material.dart';
 
 class FavoritePage extends StatefulWidget {
@@ -122,10 +124,7 @@ class _FavoritePageState extends State<FavoritePage> {
                        child: Container(
                         child: Padding(
                           padding: const EdgeInsets.all(11),
-                          child: Text("Latest",
-                          style: TextStyle(
-                            color: Colors.grey
-                          ),),
+                         child: TextHeading(text: "Latest", weight: FontWeight.normal, ),
                         ),
                         decoration: BoxDecoration(
                           // color: Colors.deepPurple[900],
@@ -142,10 +141,7 @@ class _FavoritePageState extends State<FavoritePage> {
                        child: Container(
                         child: Padding(
                           padding: const EdgeInsets.all(11),
-                          child: Text("Most Popular",
-                          style: TextStyle(
-                            color: Colors.grey
-                          ),),
+                          child: TextHeading(text: "Most Popular", weight: FontWeight.normal,),
                         ),
                         decoration: BoxDecoration(
                           // color: Colors.deepPurple[900],
@@ -162,10 +158,7 @@ class _FavoritePageState extends State<FavoritePage> {
                        child: Container(
                         child: Padding(
                           padding: const EdgeInsets.all(11),
-                          child: Text("Cheapest",
-                          style: TextStyle(
-                            color: Colors.grey
-                          ),),
+                          child: TextHeading(text: "Cheapest", weight: FontWeight.normal, ),
                         ),
                         decoration: BoxDecoration(
                           // color: Colors.deepPurple[900],
@@ -182,10 +175,7 @@ class _FavoritePageState extends State<FavoritePage> {
                        child: Container(
                         child: Padding(
                           padding: const EdgeInsets.all(11),
-                          child: Text("Trending",
-                          style: TextStyle(
-                            color: Colors.grey
-                          ),),
+                          child: TextHeading(text: "Trending", weight: FontWeight.normal, ),
                         ),
                         decoration: BoxDecoration(
                           // color: Colors.deepPurple[900],

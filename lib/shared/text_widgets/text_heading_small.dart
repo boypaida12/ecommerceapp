@@ -5,10 +5,13 @@ class TextHeadingSmall extends StatelessWidget {
   Color color;
   double size;
   final String text;
+  FontWeight weight;
+  
   TextHeadingSmall({
     Key? key,
     this.color = Colors.black54,
     this.size = 10,
+    this.weight = FontWeight.bold,
     required this.text,
   }) : super(key: key);
 
@@ -19,7 +22,7 @@ class TextHeadingSmall extends StatelessWidget {
       style: TextStyle(
         fontSize: size,
         color: color,
-        fontWeight: FontWeight.bold
+        fontWeight: weight,
       ),
     );
   }

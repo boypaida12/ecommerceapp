@@ -5,11 +5,14 @@ class TextBody extends StatelessWidget {
   final String text;
   double size;
   Color color;
+  FontWeight weight;
+  
   TextBody({
     Key? key,
     required this.text,
     this.size = 12,
-    this.color = Colors.black45,
+    this.color = Colors.grey,
+    this.weight = FontWeight.normal,
   }) : super(key: key);
 
   @override
@@ -19,6 +22,7 @@ class TextBody extends StatelessWidget {
       style: TextStyle(
         color: color,
         fontSize: size,
+        fontWeight: weight
       ),
     );
   }

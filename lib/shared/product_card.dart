@@ -1,4 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first, prefer_const_constructors
+import 'package:ecommerceapp/shared/text_widgets/text_body.dart';
+import 'package:ecommerceapp/shared/text_widgets/text_heading.dart';
 import 'package:flutter/material.dart';
 
 import 'package:ecommerceapp/shared/products.dart';
@@ -25,14 +27,9 @@ class ProductCard extends StatelessWidget {
           height: 100,
           ),
           SizedBox(height: 10,),
-          Text(product.title,
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-          ),
-          Text(product.subtitle,
-          style: TextStyle(fontSize: 12, color: Colors.grey),
-          ),
-          Text('\$${product.price}',
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),)
+          TextHeading(text: product.title),
+          TextBody(text: product.subtitle),
+          TextHeading(text: '\$${product.price}'),
         ],
       ),
     );
