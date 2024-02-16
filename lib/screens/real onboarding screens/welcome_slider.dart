@@ -1,4 +1,4 @@
-import 'package:ecommerceapp/real%20onboarding%20screens/welcome_model.dart';
+import 'package:ecommerceapp/screens/real%20onboarding%20screens/welcome_model.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatefulWidget {
