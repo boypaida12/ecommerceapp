@@ -6,12 +6,14 @@ class TextBody extends StatelessWidget {
   double size;
   Color color;
   FontWeight weight;
+  TextAlign textAlign;
   
   TextBody({
     Key? key,
     required this.text,
     this.size = 12,
     this.color = Colors.grey,
+    this.textAlign = TextAlign.center,
     this.weight = FontWeight.normal,
   }) : super(key: key);
 
@@ -24,6 +26,7 @@ class TextBody extends StatelessWidget {
         fontSize: size,
         fontWeight: weight
       ),
+      textAlign: textAlign,
     );
   }
 }

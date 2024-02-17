@@ -10,10 +10,17 @@ import 'package:ecommerceapp/shared/custombutton.dart';
 // import 'package:ecommerceapp/shared/custombottomsheet.dart';
 // import 'package:ecommerceapp/shared/custombutton.dart';
 import 'package:ecommerceapp/shared/customnavbar.dart';
+import 'package:ecommerceapp/shared/text_widgets/text_body.dart';
+import 'package:ecommerceapp/shared/text_widgets/text_heading_extra_large.dart';
+import 'package:ecommerceapp/shared/text_widgets/text_heading_large.dart';
+import 'package:ecommerceapp/shared/text_widgets/text_small.dart';
 import 'package:flutter/material.dart';
+
+
 
 class PaymentScreen extends StatefulWidget {
   final double totalPrice = 99;
+  
 
   const PaymentScreen({
     super.key,
@@ -24,6 +31,7 @@ class PaymentScreen extends StatefulWidget {
 }
 
 class _PaymentScreenState extends State<PaymentScreen> {
+  BottomSheet? firstBottomSheet;
   bool? _isChecked = true;
 
   @override
@@ -139,47 +147,74 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   showModalBottomSheet(
                     context: context,
                     builder: (context) => CustomBottomSheet(
-                      child: Container(
-                        padding: EdgeInsets.all(16),
-                        height: MediaQuery.of(context).size.height * .45,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            SectionTitle(sectionTitle: 'Payment Method'),
-                            CustomPaymentMethod(
-                              bankCardImg: 'assets/images/map_img.png',
-                              cardNumberorEmail: 'kab****@gmail.com',
-                              cardProviderName: 'PayPal',
-                              isChecked: false,
-                              onChanged: (newValue) => setState(()=> _isChecked = newValue)
-                            ),
-                            CustomPaymentMethod(
-                              bankCardImg: 'assets/images/map_img.png',
-                              cardNumberorEmail: '**** *** **5632',
-                              cardProviderName: 'Master Card',
-                              isChecked: _isChecked,
-                              onChanged: (newValue) => setState(()=> _isChecked = newValue!)
-                            ),
-                            Card(
-                              child: Container(
-                                padding: EdgeInsets.all(12),
-                                child: Row(
-                                  children: const [
-                                    Icon(Icons.add_circle_outline_outlined),
-                                    SizedBox(width: 16,),
-                                    Text('Add Payment Method',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.w600,
-                                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          SectionTitle(sectionTitle: 'Payment Method'),
+                          CustomPaymentMethod(
+                            bankCardImg: 'assets/images/map_img.png',
+                            cardNumberorEmail: 'kab****@gmail.com',
+                            cardProviderName: 'PayPal',
+                            isChecked: false,
+                            onChanged: (newValue) => setState(()=> _isChecked = newValue)
+                          ),
+                          CustomPaymentMethod(
+                            bankCardImg: 'assets/images/map_img.png',
+                            cardNumberorEmail: '**** *** **5632',
+                            cardProviderName: 'Master Card',
+                            isChecked: _isChecked,
+                            onChanged: (newValue) => setState(()=> _isChecked = newValue!)
+                          ),
+                          Card(
+                            child: Container(
+                              padding: EdgeInsets.all(12),
+                              child: Row(
+                                children: const [
+                                  Icon(Icons.add_circle_outline_outlined),
+                                  SizedBox(width: 16,),
+                                  Text('Add Payment Method',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w600,
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
                             ),
-                            CustomButton(buttonText: 'Confirm Payment', onPressed: (){})
-                          ],
-                        ),
-                      ), //can change Column to any widget depending on your screen's use case
+                          ),
+                          CustomButton(
+                            buttonText: 'Confirm Payment', 
+                            onPressed: (){
+                              Navigator.pop(context);
+                              showModalBottomSheet(
+                                context: context, 
+                                builder: (context) => CustomBottomSheet(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    // crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: [
+                                      CircleAvatar(
+                                        backgroundImage: AssetImage("assets/images/order-successful.png",
+                                        ),
+                                        radius: 120,
+                                      ),
+                                      TextHeadingExtraLarge(text: 'Order Successful', size: 18,),
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                                        child: TextBody(text: 'Your order will be packed by the clerk and will arrive at your home within the next 2-4 days'),
+                                      ),
+                                      CustomButton(
+                                        buttonText: 'Track Order', 
+                                        onPressed: (){},
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+                        ],
+                      ),
+                      onClosing: () => Navigator.pop(context),
                     ),
                   );
                 }),

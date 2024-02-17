@@ -18,20 +18,20 @@ class CustomBottomSheet extends StatelessWidget {
     // final means the child cannot be changed once set and must be provided when using the CustomBottomSheet.
     // Widget refers to any element you can build in Flutter. In our case it will likely be a Column widget. 
   final Widget child;
+  final VoidCallback? onClosing;
 
   const CustomBottomSheet({
-    Key? key,
+    super.key,
     required this.child, // making the widget required means it always has to be called before the widget can work.
-    }) : super(key: key);
+    this.onClosing,
+    });
 
 
   @override
   Widget build(BuildContext context) { // BuildContext is the context of the screen where the button is pressed.
     // This return creates the bottom sheet that slides up from the bottom of the screen.
     return BottomSheet(
-      onClosing: () {
-        Navigator.pop(context); // When the user taps outside the Bottom Sheet, close it.
-      },
+      onClosing: onClosing ?? (){},
       builder: (context) => Container(
         padding: const EdgeInsets.all(8),
         child: Column(
@@ -44,7 +44,11 @@ class CustomBottomSheet extends StatelessWidget {
                 borderRadius: const BorderRadius.all(Radius.circular(8))
               ),
             ),
-            child,
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 20),
+              height: MediaQuery.of(context).size.height * .45,
+              child: child,
+            ),
           ],
         ), // the child Widget that is required.
       ),
