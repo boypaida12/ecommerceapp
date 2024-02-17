@@ -1,7 +1,7 @@
 import 'package:ecommerceapp/screens/account/register_success_page.dart';
-import 'package:ecommerceapp/screens/payment/payment_screen.dart';
-import 'package:flutter/material.dart';
+import 'package:ecommerceapp/screens/real%20onboarding%20screens/real_splash_screen.dart';
 
+import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
