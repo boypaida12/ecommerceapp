@@ -1,3 +1,4 @@
+import 'package:ecommerceapp/screens/account/register_success_page.dart';
 import 'package:ecommerceapp/screens/payment/payment_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const PaymentScreen(),
+      home: const RegisterSuccessPage(),
     );
   }
 }

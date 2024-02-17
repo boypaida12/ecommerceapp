@@ -1,3 +1,4 @@
+import 'package:ecommerceapp/shared/custom_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 
 
@@ -168,32 +169,9 @@ class _RegisterSuccessPageState extends State<RegisterSuccessPage> {
          ),
 
          ElevatedButton(onPressed: (){
-          showModalBottomSheet(
-              context: context,
-              builder: (context) => Container(
-                padding: EdgeInsets.all(20.0),
-                 child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text('This is a Bottom Sheet'),
-                    SizedBox(height: 10.0),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        ElevatedButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                           child: Text('Close'),
-                        ),
-                      ],
-                    ),
-                    ],
-                ),
-              ),
-            );
+          showBottomSheet(context: context, builder: (context) => const CustomBottomSheet());
          },
-          child: Text('Show Bottom Sheet'),)
+          child: const Text('Show Bottom Sheet'),)
                 ],
               ),
             
