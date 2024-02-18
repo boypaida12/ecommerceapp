@@ -9,11 +9,11 @@ class CustomNavbar extends StatelessWidget implements PreferredSizeWidget{
   final VoidCallback? onPressed;
 
   const CustomNavbar({
-    Key? key ,
+    super.key ,
     required this.title,
     this.actionIcon,
     this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +26,8 @@ class CustomNavbar extends StatelessWidget implements PreferredSizeWidget{
       ),
       title: Text(title),
       actions: [
-        if (actionIcon != null) IconButton( // Use IconButton for interactive icons
-          onPressed: onPressed, // Add an onPressed handler
+        if (actionIcon != null) IconButton(
+          onPressed: onPressed,
           icon: Icon(actionIcon),
         ),
       ],

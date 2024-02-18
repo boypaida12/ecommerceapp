@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:ecommerceapp/screens/payment/address_screen.dart';
+import 'package:ecommerceapp/screens/payment/address/address_screen.dart';
 import 'package:ecommerceapp/screens/payment/shared/custompaymentmethod.dart';
 import 'package:ecommerceapp/screens/payment/shared/customroundedcontainer.dart';
 import 'package:ecommerceapp/screens/payment/shared/product_rows.dart';
@@ -12,8 +12,8 @@ import 'package:ecommerceapp/shared/custombutton.dart';
 import 'package:ecommerceapp/shared/customnavbar.dart';
 import 'package:ecommerceapp/shared/text_widgets/text_body.dart';
 import 'package:ecommerceapp/shared/text_widgets/text_heading_extra_large.dart';
-import 'package:ecommerceapp/shared/text_widgets/text_heading_large.dart';
-import 'package:ecommerceapp/shared/text_widgets/text_small.dart';
+// import 'package:ecommerceapp/shared/text_widgets/text_heading_large.dart';
+// import 'package:ecommerceapp/shared/text_widgets/text_small.dart';
 import 'package:flutter/material.dart';
 
 
@@ -195,7 +195,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                                       CircleAvatar(
                                         backgroundImage: AssetImage("assets/images/order-successful.png",
                                         ),
-                                        radius: 120,
+                                        radius: MediaQuery.of(context).size.width  * .25,
                                       ),
                                       TextHeadingExtraLarge(text: 'Order Successful', size: 18,),
                                       Padding(
